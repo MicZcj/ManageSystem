@@ -4,7 +4,8 @@
 <struts>
 	<package name="strutsBean" extends="struts-default" namespace="/">
 		<action name="employee_*" method="{1}" class="com.ssh.ms.action.EmployeeAction" >
-			
+			<result name="input">/index.jsp</result>
+			<result name="success" type="redirect">/frame.jsp</result>
 		</action>
 	</package>
 </struts>

@@ -1,5 +1,9 @@
 package com.ssh.ms.dao;
 
-public interface EmployeeDao {
+import java.util.List;
 
+import com.ssh.ms.po.Employee;
+
+public interface EmployeeDao {
+	Employee findByUsernameAnaPassword(Employee employee);
 }
