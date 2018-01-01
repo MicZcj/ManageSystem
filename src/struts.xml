@@ -7,5 +7,6 @@
 			<result name="input">/index.jsp</result>
 			<result name="success" type="redirect">/frame.jsp</result>
 		</action>
+		
 	</package>
 </struts>

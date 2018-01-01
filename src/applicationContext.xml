@@ -43,14 +43,24 @@ http://www.springframework.org/schema/context/spring-context-4.0.xsd">
 	<bean id="employeeDao" class="com.ssh.ms.dao.impl.EmployeeDaoImpl">
 		<property name="sessionFactory" ref="sessionFactory"></property>
 	</bean>
+	<bean id="departmentDao" class="com.ssh.ms.dao.impl.DerpartmentDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
 	<!-- 配置业务层类 -->
 	<bean id="employeeService" class="com.ssh.ms.service.impl.EmployeeServiceImpl">
 		<property name="employeeDao" ref="employeeDao"></property>
+	</bean>
+	<bean id="departmentService" class="com.ssh.ms.service.impl.DepartmentServiceImpl">
+		<property name="departmentDao" ref="departmentDao"></property>
 	</bean>
 	<!-- 配置Action类 -->
 	<bean id="employeeAction" class="com.ssh.ms.action.EmployeeAction"
 		scope="prototype">
 		<property name="employeeService" ref="employeeService"></property>
+	</bean>
+	<bean name="departmentAction" class="com.ssh.ms.action.DepartmentAction"
+		scope="prototype">
+		<property name="departmentService" ref="departmentService"></property>
 	</bean>
 	<!-- 配置事务管理器 -->
 	<bean id="transactionManager"
