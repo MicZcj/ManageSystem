@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-4.0.xsd 
+http://www.springframework.org/schema/aop 
+http://www.springframework.org/schema/aop/spring-aop-4.0.xsd 
+http://www.springframework.org/schema/tx 
+http://www.springframework.org/schema/tx/spring-tx-4.0.xsd 
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url"
+			value="jdbc:mysql://localhost:3306/manage_system?useUnicode=true&amp;characterEncoding=UTF-8" />
+		<property name="username" value="root" />
+		<property name="password" value="zcj652584" />
+	</bean>
+
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">
+					org.hibernate.dialect.MySQL5Dialect
+				</prop>
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.format_sql">true</prop>
+				<prop key="hibernate.hbm2ddl.auto">update</prop>
+			</props>
+		</property>
+		<property name="mappingResources">
+			<list>
+				<value>com/ssh/ms/po/Department.hbm.xml</value>
+				<value>com/ssh/ms/po/Employee.hbm.xml</value>
+			</list>
+		</property>
+	</bean>
+	<!-- 配置DAO类 -->
+	<bean id="employeeDao" class="com.ssh.ms.dao.impl.EmployeeDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<!-- 配置业务层类 -->
+	<bean id="employeeService" class="com.ssh.ms.service.impl.EmployeeServiceImpl">
+		<property name="employeeDao" ref="employeeDao"></property>
+	</bean>
+	<!-- 配置Action类 -->
+	<bean id="employeeAction" class="com.ssh.ms.action.EmployeeAction"
+		scope="prototype">
+		<property name="employeeService" ref="employeeService"></property>
+	</bean>
+	<!-- 配置事务管理器 -->
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate5.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<!-- 开启注解事务 -->
+	<tx:annotation-driven transaction-manager="transactionManager" />
+</beans>
