@@ -14,7 +14,7 @@ public class EmployeeDaoImpl extends HibernateDaoSupport implements EmployeeDao 
 		String username = employee.getUsername();
 		String password = employee.getPassword();
 		String hql = "from Employee where username ='" + username + "' and password ='" + password + "'";
-		List<Employee> list = (List<Employee>) this.getHibernateTemplate().findByValueBean(hql, employee);
+		List<Employee> list = (List<Employee>) this.getHibernateTemplate().find(hql);
 		if (list.size() > 0) {
 			return list.get(0);
 		}
