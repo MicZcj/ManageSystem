@@ -12,4 +12,8 @@ public interface EmployeeDao {
 	List<Employee> findByPage(Integer begin, Integer pageSize);
 
 	void save(Employee employee);
+
+	Employee findById(Integer eid);
+
+	void update(Employee employee);
 }

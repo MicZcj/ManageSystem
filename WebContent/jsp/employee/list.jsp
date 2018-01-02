@@ -49,7 +49,8 @@ thead {
 					<td align="center"><s:date name="#e.joinDate"
 							format="yyyy-MM-dd" /></td>
 					<td align="center"><s:property value="#e.department.dname" /></td>
-					<td align="center"><a href="editEmployee.html"><img
+					<td align="center"><a
+						href="employee_edit.action?eid=<s:property value="#e.eid"/>"><img
 							src="../images/编辑.png"></a></td>
 				</tr>
 			</s:iterator>

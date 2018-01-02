@@ -44,4 +44,15 @@ public class EmployeeDaoImpl extends HibernateDaoSupport implements EmployeeDao 
 		this.getHibernateTemplate().save(employee);
 	}
 
+	@Override
+	public Employee findById(Integer eid) {
+		return this.getHibernateTemplate().get(Employee.class, eid);
+	}
+
+	@Override
+	public void update(Employee employee) {
+		this.getHibernateTemplate().update(employee);
+
+	}
+
 }

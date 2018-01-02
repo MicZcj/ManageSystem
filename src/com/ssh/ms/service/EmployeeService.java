@@ -8,4 +8,8 @@ public interface EmployeeService {
 	PageBean<Employee> findByPage(Integer currPage);
 
 	void save(Employee employee);
+
+	Employee findById(Integer eid);
+
+	void update(Employee employee);
 }

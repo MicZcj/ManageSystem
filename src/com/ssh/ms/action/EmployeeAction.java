@@ -72,4 +72,20 @@ public class EmployeeAction extends ActionSupport implements ModelDriven<Employe
 		employeeService.save(employee);
 		return "save";
 	}
+
+	// 编辑员工信息方法
+	public String edit() {
+		// 根据员工id查员工
+		employee = employeeService.findById(employee.getEid());
+		// 查询所有部门
+		List<Department> list = departmentService.findAll();
+		ActionContext.getContext().getValueStack().set("list",list);
+		return "edit";
+	}
+
+	// 执行修改员工信息方法
+	public String update() {
+		employeeService.update(employee);
+		return "update";
+	}
 }

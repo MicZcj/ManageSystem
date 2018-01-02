@@ -56,4 +56,14 @@ public class EmployeeServiceImpl implements EmployeeService {
 		employeeDao.save(employee);
 	}
 
+	@Override
+	public Employee findById(Integer eid) {
+		return employeeDao.findById(eid);
+	}
+
+	@Override
+	public void update(Employee employee) {
+		employeeDao.update(employee);
+	}
+
 }
