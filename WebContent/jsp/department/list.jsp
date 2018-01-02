@@ -30,6 +30,7 @@ thead {
 			<tr>
 				<th width="450">部门名称</th>
 				<th width="450">编辑</th>
+				<th width="450">删除</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -40,6 +41,9 @@ thead {
 					<td align="center"><a
 						href="${pageContext.request.contextPath }/department_edit.action?did=<s:property value="#d.did" />"><img
 							src="${ pageContext.request.contextPath }/frame/img/编辑.png"></a></td>
+					<td align="center"><a
+						href="${pageContext.request.contextPath }/department_delete.action?did=<s:property value="#d.did" />"><button
+								style="color: red">删除</button></a></td>
 				</tr>
 			</s:iterator>
 		</tbody>

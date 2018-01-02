@@ -54,4 +54,9 @@ public class DepartmentServiceImpl implements DepartmentService {
 		departmentDao.update(department);
 	}
 
+	@Override
+	public void delete(Department department) {
+		departmentDao.delete(department);
+	}
+
 }
