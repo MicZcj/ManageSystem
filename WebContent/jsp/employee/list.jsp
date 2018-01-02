@@ -20,7 +20,7 @@ thead {
 			<td align="center" style="font-size: 24px; color: #666">员工管理</td>
 		</tr>
 		<tr>
-			<td align="right"><a href="addEmployee.html">添加</a></td>
+			<td align="right"><a href="employee_saveUI.action">添加</a></td>
 		</tr>
 	</table>
 	<br />

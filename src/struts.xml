@@ -8,6 +8,8 @@
 			<result name="input">/index.jsp</result>
 			<result name="success" type="redirect">/frame.jsp</result>
 			<result name="findAll">/jsp/employee/list.jsp</result>
+			<result name="saveUI">/jsp/employee/add.jsp</result>
+			<result name="save" type="redirectAction">employee_findAll.action</result>
 		</action>
 		<action name="department_*" method="{1}"
 			class="com.ssh.ms.action.DepartmentAction">

@@ -50,4 +50,9 @@ public class DepartmentDaoImpl extends HibernateDaoSupport implements Department
 	public void delete(Department department) {
 		this.getHibernateTemplate().delete(department);
 	}
+
+	@Override
+	public List<Department> findAll() {
+		return (List<Department>) this.getHibernateTemplate().find("from Department");
+	}
 }

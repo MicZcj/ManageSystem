@@ -39,4 +39,9 @@ public class EmployeeDaoImpl extends HibernateDaoSupport implements EmployeeDao 
 		return list;
 	}
 
+	@Override
+	public void save(Employee employee) {
+		this.getHibernateTemplate().save(employee);
+	}
+
 }

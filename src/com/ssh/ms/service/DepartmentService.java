@@ -1,5 +1,7 @@
 package com.ssh.ms.service;
 
+import java.util.List;
+
 import com.ssh.ms.po.Department;
 import com.ssh.ms.po.Employee;
 import com.ssh.ms.po.PageBean;
@@ -15,5 +17,7 @@ public interface DepartmentService {
 	void update(Department department);
 
 	void delete(Department department);
+
+	List<Department> findAll();
 	
 }

@@ -51,4 +51,9 @@ public class EmployeeServiceImpl implements EmployeeService {
 		return pageBean;
 	}
 
+	@Override
+	public void save(Employee employee) {
+		employeeDao.save(employee);
+	}
+
 }
