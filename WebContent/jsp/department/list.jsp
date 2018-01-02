@@ -37,7 +37,8 @@ thead {
 
 				<tr>
 					<td align="center"><s:property value="#d.dname" /></td>
-					<td align="center"><a href="editDept.html"><img
+					<td align="center"><a
+						href="${pageContext.request.contextPath }/department_edit.action?did=<s:property value="#d.did" />"><img
 							src="${ pageContext.request.contextPath }/frame/img/编辑.png"></a></td>
 				</tr>
 			</s:iterator>

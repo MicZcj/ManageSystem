@@ -13,4 +13,8 @@ public interface DepartmentDao {
 
 	void save(Department department);
 
+	Department findById(Integer did);
+
+	void update(Department department);
+
 }

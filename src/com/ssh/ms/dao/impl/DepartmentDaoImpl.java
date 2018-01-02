@@ -34,4 +34,15 @@ public class DepartmentDaoImpl extends HibernateDaoSupport implements Department
 		this.getHibernateTemplate().save(department);
 
 	}
+
+	@Override
+	public Department findById(Integer did) {
+		return this.getHibernateTemplate().get(Department.class, did);
+	}
+
+	@Override
+	public void update(Department department) {
+		// TODO Auto-generated method stub
+		this.getHibernateTemplate().update(department);
+	}
 }

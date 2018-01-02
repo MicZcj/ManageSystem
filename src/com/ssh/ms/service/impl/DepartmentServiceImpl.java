@@ -43,4 +43,15 @@ public class DepartmentServiceImpl implements DepartmentService {
 
 	}
 
+	@Override
+	public Department findById(Integer did) {
+		return departmentDao.findById(did);
+	}
+
+	@Override
+	public void update(Department department) {
+		// TODO Auto-generated method stub
+		departmentDao.update(department);
+	}
+
 }

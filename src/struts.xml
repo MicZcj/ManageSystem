@@ -13,6 +13,8 @@
 			<result name="findAll">/jsp/department/list.jsp</result>
 			<result name="saveUI">/jsp/department/add.jsp</result>
 			<result name="save" type="redirectAction">department_findAll.action</result>
+			<result name="edit">/jsp/department/edit.jsp</result>
+			<result name="update" type="redirectAction">department_findAll.action</result>
 		</action>
 	</package>
 </struts>
