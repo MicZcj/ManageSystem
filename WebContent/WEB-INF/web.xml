@@ -5,6 +5,19 @@
 	version="3.1">
 
 	<display-name>ManageSystem</display-name>
+	<filter>
+		<filter-name>OpenSessionInViewFilter</filter-name>
+		<filter-class>org.springframework.orm.hibernate5.support.OpenSessionInViewFilter</filter-class>
+		<!-- singleSession默认为true,若设为false则等于没用OpenSessionInView -->
+		<init-param>
+			<param-name>singleSession</param-name>
+			<param-value>true</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>OpenSessionInViewFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
 		<param-value>classpath:applicationContext.xml</param-value>
@@ -12,6 +25,8 @@
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
+	<!-- 此拦截器配置等同于lazy=false -->
+
 	<!-- 定义 Struts2 的核心 Filter -->
 	<filter>
 		<filter-name>struts2</filter-name>

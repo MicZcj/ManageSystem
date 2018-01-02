@@ -30,7 +30,8 @@
 			<column name="password" />
 		</property>
 		<!-- 关联关系映射 -->
-		<many-to-one name="department" class="com.ssh.ms.po.Department">
+		<many-to-one name="department" class="com.ssh.ms.po.Department"
+			lazy="false">
 			<column name="dno" />
 		</many-to-one>
 	</class>
