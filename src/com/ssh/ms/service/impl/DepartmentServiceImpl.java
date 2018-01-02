@@ -4,10 +4,14 @@ import com.ssh.ms.service.DepartmentService;
 
 import java.util.List;
 
+import org.springframework.transaction.annotation.Transactional;
+
 import com.ssh.ms.dao.*;
 import com.ssh.ms.po.Department;
+import com.ssh.ms.po.Employee;
 import com.ssh.ms.po.PageBean;
 
+@Transactional
 public class DepartmentServiceImpl implements DepartmentService {
 	// service中注入dao
 	private DepartmentDao departmentDao;
@@ -31,6 +35,12 @@ public class DepartmentServiceImpl implements DepartmentService {
 		List<Department> list = departmentDao.findByPage(begin, pageSize);
 		pageBean.setList(list);
 		return pageBean;
+	}
+
+	@Override
+	public void save(Department department) {
+		departmentDao.save(department);
+
 	}
 
 }

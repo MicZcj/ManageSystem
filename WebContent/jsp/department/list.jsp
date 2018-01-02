@@ -21,7 +21,7 @@ thead {
 			<td align="center" style="font-size: 24px; color: #666">部门管理</td>
 		</tr>
 		<tr>
-			<td align="right"><a href="addDepartment.html">添加</a></td>
+			<td align="right"><a href="department_saveUI.action">添加</a></td>
 		</tr>
 	</table>
 	<br />
@@ -38,7 +38,7 @@ thead {
 				<tr>
 					<td align="center"><s:property value="#d.dname" /></td>
 					<td align="center"><a href="editDept.html"><img
-							src="../images/编辑.png"></a></td>
+							src="${ pageContext.request.contextPath }/frame/img/编辑.png"></a></td>
 				</tr>
 			</s:iterator>
 		</tbody>

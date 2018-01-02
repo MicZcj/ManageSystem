@@ -7,6 +7,7 @@ import org.springframework.orm.hibernate5.support.HibernateDaoSupport;
 
 import com.ssh.ms.dao.DepartmentDao;
 import com.ssh.ms.po.Department;
+import com.ssh.ms.po.Employee;
 
 public class DepartmentDaoImpl extends HibernateDaoSupport implements DepartmentDao {
 
@@ -28,4 +29,9 @@ public class DepartmentDaoImpl extends HibernateDaoSupport implements Department
 		return list;
 	}
 
+	@Override
+	public void save(Department department) {
+		this.getHibernateTemplate().save(department);
+
+	}
 }

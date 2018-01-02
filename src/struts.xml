@@ -10,7 +10,9 @@
 		</action>
 		<action name="department_*" method="{1}"
 			class="com.ssh.ms.action.DepartmentAction">
-			<result name="findAll">/jsp/list.jsp</result>
+			<result name="findAll">/jsp/department/list.jsp</result>
+			<result name="saveUI">/jsp/department/add.jsp</result>
+			<result name="save" type="redirectAction">department_findAll.action</result>
 		</action>
 	</package>
 </struts>
