@@ -12,6 +12,7 @@
 			<result name="save" type="redirectAction">employee_findAll.action</result>
 			<result name="edit">/jsp/employee/edit.jsp</result>
 			<result name="update" type="redirectAction">employee_findAll.action</result>
+			<result name="delete" type="redirectAction">employee_findAll.action</result>
 		</action>
 		<action name="department_*" method="{1}"
 			class="com.ssh.ms.action.DepartmentAction">

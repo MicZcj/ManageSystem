@@ -79,7 +79,7 @@ public class EmployeeAction extends ActionSupport implements ModelDriven<Employe
 		employee = employeeService.findById(employee.getEid());
 		// 查询所有部门
 		List<Department> list = departmentService.findAll();
-		ActionContext.getContext().getValueStack().set("list",list);
+		ActionContext.getContext().getValueStack().set("list", list);
 		return "edit";
 	}
 
@@ -87,5 +87,11 @@ public class EmployeeAction extends ActionSupport implements ModelDriven<Employe
 	public String update() {
 		employeeService.update(employee);
 		return "update";
+	}
+
+	// 删除员工
+	public String delete() {
+		employeeService.delete(employee);
+		return "delete";
 	}
 }

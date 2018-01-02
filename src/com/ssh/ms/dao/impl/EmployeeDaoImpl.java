@@ -52,7 +52,11 @@ public class EmployeeDaoImpl extends HibernateDaoSupport implements EmployeeDao 
 	@Override
 	public void update(Employee employee) {
 		this.getHibernateTemplate().update(employee);
+	}
 
+	@Override
+	public void delete(Employee employee) {
+		this.getHibernateTemplate().delete(employee);
 	}
 
 }

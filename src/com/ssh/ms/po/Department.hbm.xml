@@ -13,7 +13,8 @@
 		<property name="ddesc" type="java.lang.String" length="100">
 			<column name="ddesc" />
 		</property>
-		<set name="employees">
+		<!-- 添加级联删除delete 放弃外键维护权true -->
+		<set name="employees" cascade="delete" inverse="true">
 			<key>
 				<column name="dno" />
 			</key>
